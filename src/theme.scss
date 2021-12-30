@@ -1,0 +1,17 @@
+.button.theme-default {
+  background-color: #fff;
+}
+
+.button.theme-primary {
+  background-color: #6d28d9;
+  color: #fff;
+}
+
+.button.theme-primary:hover {
+  background-color: rgba(#6d28d9, 0.4);
+}
+
+.button.theme-danger {
+  background-color: #b91c1c;
+  color: #fff;
+}

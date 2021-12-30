@@ -1,0 +1,15 @@
+{
+  "name": "button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js -e css,scss -w src"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "sass": "^1.45.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
