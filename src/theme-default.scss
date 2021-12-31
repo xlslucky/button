@@ -1,0 +1,30 @@
+.button-theme-default {
+  background-color: #fff;
+  border-color: $border;
+
+  &:hover {
+    color: $primary;
+    border-color: $primary;
+  }
+
+  &:active {
+    color: $primary-dark;
+    border-color: $primary-dark;
+  }
+
+  &.ghost {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+    }
+
+    &:active {
+      color: $primary-dark;
+      border-color: $primary-dark;
+    }
+  }
+}

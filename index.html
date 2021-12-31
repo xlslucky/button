@@ -5,22 +5,74 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *, *::after, *::before {
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f5f5f5;
+    }
+    b {
+      display: block;
+    }
+  </style>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div style="max-width: 1000px;margin: 0 auto;">
     <div>
-      <div><b>Size</b></div>
-      <button class="button size-small">small</button>
-      <button class="button size-medium">medium</button>
-      <button class="button size-large">large</button>
+      <b>BackgroundColor</b>
+      <input type="color" value="#f5f5f5" id="colorSelecct" />
     </div>
     <div>
-      <div><b>Theme</b></div>
-      <button class="button size-medium theme-default">default</button>
-      <button class="button size-medium theme-primary">primary</button>
-      <button class="button size-medium theme-danger">danger</button>
+      <b>Size</b>
+      <button class="button button-theme-default button-size-small">small</button>
+      <button class="button button-theme-default button-size-medium">medium</button>
+      <button class="button button-theme-default button-size-large">large</button>
+    </div>
+    <div>
+      <b>Theme Default</b>
+      <button class="button button-size-medium button-theme-default">default</button>
+      <button class="button button-size-medium button-theme-default loading">default loading</button>
+      <button class="button button-size-medium button-theme-default" disabled>default disabled</button>
+      <button class="button button-size-medium button-theme-default ghost">default ghost</button>
+      <button class="button button-size-medium button-theme-default ghost loading">default ghost loading</button>
+      <button class="button button-size-medium button-theme-default ghost" disabled>default ghost disabled</button>
+    </div>
+    <div>
+      <b>Theme Primary</b>
+      <button class="button button-size-medium button-theme-primary">primary</button>
+      <button class="button button-size-medium button-theme-primary loading">primary loading</button>
+      <button class="button button-size-medium button-theme-primary" disabled>primary disabled</button>
+      <button class="button button-size-medium button-theme-primary ghost">primary ghost</button>
+      <button class="button button-size-medium button-theme-primary ghost loading">primary ghost loading</button>
+      <button class="button button-size-medium button-theme-primary ghost" disabled>primary ghost disabled</button>
+    </div>
+    <div>
+      <b>Theme Danger</b>
+      <button class="button button-size-medium button-theme-danger">danger</button>
+      <button class="button button-size-medium button-theme-danger loading">danger loading</button>
+      <button class="button button-size-medium button-theme-danger" disabled>danger disabled</button>
+      <button class="button button-size-medium button-theme-danger ghost">danger ghost</button>
+      <button class="button button-size-medium button-theme-danger ghost loading">danger ghost loading</button>
+      <button class="button button-size-medium button-theme-danger ghost" disabled>danger ghost disabled</button>
     </div>
   </div>
 </body>
+<script>
+  (() => {
+    const colorSelecct = document.querySelector('#colorSelecct')
+
+    colorSelecct.addEventListener('input', function (e) {
+      document.body.style.backgroundColor = e.target.value
+    })
+
+    document.querySelectorAll('.loading').forEach(dom => {
+      dom.innerHTML = `
+      <svg class="loading-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M270.4 214.4C336 160 420 128 512 128c212 0 384 172 384 384h64c0-247.2-200.8-448-448-448-107.2 0-205.6 37.6-282.4 100l40.8 50.4z" data-spm-anchor-id="a313x.7781069.0.i1"/></svg>
+      ${dom.innerHTML}
+    `
+    })
+  })()
+</script>
 </html>

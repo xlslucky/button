@@ -1,0 +1,28 @@
+.button-theme-danger {
+  background-color: $danger;
+  color: #fff;
+
+  &:hover {
+    background-color: $danger-light;
+  }
+
+  &:active {
+    background-color: $danger-dark;
+  }
+
+  &.ghost {
+    background-color: transparent;
+    color: $danger;
+    border-color: $danger;
+
+    &:hover {
+      color: $danger-light;
+      border-color: $danger-light;
+    }
+
+    &:active {
+      color: $danger-dark;
+      border-color: $danger-dark;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.button-theme-primary {
+  background-color: $primary;
+  color: #fff;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+
+  &:active {
+    background-color: $primary-dark;
+  }
+
+  &.ghost {
+    background-color: transparent;
+    color: $primary;
+    border-color: $primary;
+
+    &:hover {
+      color: $primary-light;
+      border-color: $primary-light;
+    }
+
+    &:active {
+      color: $primary-dark;
+      border-color: $primary-dark;
+    }
+  }
+}

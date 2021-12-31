@@ -1,6 +1,66 @@
+@import './variable';
+
 .button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   padding: 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &[disabled],
+  &:disabled,
+  &.loading {
+    cursor: not-allowed;
+  }
+
+  &[disabled],
+  &:disabled {
+    background-color: #00000020!important;
+    border-color: $border!important;
+    color: $text-disabled!important;
+  }
+
+  // &.ghost {
+  //   &[disabled],
+  //   &:disabled {
+  //     border-color: $border!important;
+  //     color: $text-disabled!important;
+  //   }
+  // }
+
+  &.loading {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      background-color: rgba(#fff, 0.2);
+    }
+  }
+}
+
+.loading-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  margin-right: 4px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
