@@ -12,6 +12,7 @@
   transition: all 0.3s;
   vertical-align: middle;
   cursor: pointer;
+  outline: none;
 
   &[disabled],
   &:disabled,
@@ -33,6 +34,12 @@
   //     color: $text-disabled!important;
   //   }
   // }
+
+  &:focus {
+    box-shadow: 
+      0px 0px 0px 2px #fff,
+      0px 0px 0px 4px $primary;
+  }
 
   &.loading {
     position: relative;
